@@ -10,10 +10,12 @@ public class Main {
         // referencje do database a nie do database1 to nie wydrukujemy zawartosći drugiej listy
 
 
-        View view = new View(database);
+        View view = new View(database, new LCDView());
         view.printAllData(); // wydrukuje Raz Dwa
         database1.getStringList().add("Trzy"); //nie drukuje bo nie ma w view referencji do obiektu database1
         view.printAllData(); // Wyrdukuje Raz Dwa
+        view.printFromLCD(); // ponieważ referencja do VIEW posiada referencje do database to
+        // zostanie wydrukowane równiez Jeden Dwa
     }
 
 }

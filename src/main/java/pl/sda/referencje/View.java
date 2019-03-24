@@ -8,9 +8,16 @@ import javax.xml.crypto.Data;
 public class View {
 
     private Database database;
+    private LCDView lcdView;
 
-    public View(Database database) {
+    public View(Database database, LCDView lcdView) {
         this.database = database;
+        this.lcdView = lcdView;
+    }
+
+    public void printFromLCD(){
+        lcdView.setView(this);
+        lcdView.printData();
     }
     public void printAllData(){
         System.out.println(database.getStringList());
